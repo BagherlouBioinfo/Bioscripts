@@ -1,3 +1,4 @@
+#Step_7
 import pandas as pd
 import requests
 import json
@@ -27,9 +28,9 @@ response = requests.post(add_list_url, files=payload)
 if response.status_code == 200:
     data = response.json()
     user_list_id = data['userListId']
-    print(f"✅ Gene list successfully submitted to Enrichr.")
-    print(f"🧬 Enrichr userListId: {user_list_id}")
-    print(f"🔗 Open in Enrichr: https://maayanlab.cloud/Enrichr/enrich?userListId={user_list_id}")
+    print(f"Gene list successfully submitted to Enrichr.")
+    print(f"Enrichr userListId: {user_list_id}")
+    print(f"Open in Enrichr: https://maayanlab.cloud/Enrichr/enrich?userListId={user_list_id}")
 else:
     print("❌ Failed to submit gene list to Enrichr.")
     print("Response code:", response.status_code)
