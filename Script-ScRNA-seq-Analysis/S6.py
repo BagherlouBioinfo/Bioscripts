@@ -20,5 +20,5 @@ filtered_df.sort_values("CV_Diff", ascending=False, inplace=True)
 # Save to Excel
 filtered_df.to_excel(output_file, index=False)
 
-print(f"✅ {filtered_df.shape[0]} genes with lower noise in PDLSC found.")
-print(f"📁 Results saved to: {output_file}")
+print(f"{filtered_df.shape[0]} genes with lower noise in PDLSC found.")
+print(f"Results saved to: {output_file}")
