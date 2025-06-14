@@ -1,11 +1,11 @@
-# S-1_DentalProject_Load_and_QC.py
+# Step-1_Load_and_QC.py
 
 import scanpy as sc
 import pandas as pd
 import os
 
 # Set the path to the raw count matrix file
-data_path = "G:/Dental Project/GSE227731_DPSC_PDLSC_scRNAseq_raw_count_matrix.csv.gz"
+data_path = "./Dental Project/GSE227731_DPSC_PDLSC_scRNAseq_raw_count_matrix.csv.gz"
 
 # Read the CSV file into a pandas DataFrame
 df = pd.read_csv(data_path, index_col=0)
@@ -17,9 +17,9 @@ adata = sc.AnnData(df.T)
 adata.var_names_make_unique()
 
 # Show basic information about the dataset
-print("✅ Dataset shape (cells x genes):", adata.shape)
-print("✅ Number of genes:", adata.n_vars)
-print("✅ Number of cells:", adata.n_obs)
+print("Dataset shape (cells x genes):", adata.shape)
+print("Number of genes:", adata.n_vars)
+print("Number of cells:", adata.n_obs)
 
 # Calculate quality control metrics
 adata.obs['n_counts'] = adata.X.sum(axis=1)           # Total counts per cell
@@ -38,4 +38,4 @@ os.makedirs("G:/Dental Project/Processed", exist_ok=True)
 # Save the AnnData object for later use
 adata.write("G:/Dental Project/Processed/adata_dental_raw_filtered.h5ad")
 
-print("🎉 AnnData file successfully saved.")
+print("AnnData file successfully saved.")
