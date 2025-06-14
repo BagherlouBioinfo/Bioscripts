@@ -1,4 +1,4 @@
-# S-3_DentalProject_Normalize_PCA_UMAP.py
+# Step_3_DentalProject_Normalize_PCA_UMAP.py
 
 import scanpy as sc
 
@@ -36,4 +36,4 @@ sc.pl.umap(adata, color=['leiden', 'CellSource'], save="_leiden_CellSource.png")
 # Save the processed AnnData object
 adata.write("G:/Dental Project/Processed/adata_dental_normalized_clustered.h5ad")
 
-print("🎉 Normalization and clustering complete. UMAP plot saved.")
+print("Normalization and clustering complete. UMAP plot saved.")
