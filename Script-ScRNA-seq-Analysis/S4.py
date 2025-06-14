@@ -1,3 +1,4 @@
+#Step_4
 import scanpy as sc
 import pandas as pd
 import numpy as np
@@ -14,7 +15,7 @@ results = []
 
 # For each group: DPSC and PDLSC
 for group in adata.obs["CellSource"].unique():
-    print(f"🔍 Calculating for group: {group}")
+    print(f"Calculating for group: {group}")
     # Subset data
     group_adata = adata[adata.obs["CellSource"] == group]
     X = group_adata.X.toarray() if hasattr(group_adata.X, "toarray") else group_adata.X
@@ -40,5 +41,5 @@ df_noise = pd.DataFrame(results)
 # Save to Excel
 output_path = "Processed/gene_expression_noise_by_group.xlsx"
 df_noise.to_excel(output_path, index=False)
-print(f"🎉 Noise metrics saved to: {output_path}")
+print(f"Noise metrics saved to: {output_path}")
 
