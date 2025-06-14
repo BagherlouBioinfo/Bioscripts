@@ -3,7 +3,7 @@
 import scanpy as sc
 
 # Load the labeled AnnData object
-adata = sc.read("G:/Dental Project/Processed/adata_dental_labeled.h5ad")
+adata = sc.read("./Dental Project/Processed/adata_dental_labeled.h5ad")
 
 # Step 1: Normalize total counts per cell to 10,000 and log-transform
 sc.pp.normalize_total(adata, target_sum=1e4)
